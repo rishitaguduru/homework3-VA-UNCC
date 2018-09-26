@@ -1,0 +1,17 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "description": "a bar chart that expresses the amount of loss with aligned horizontal position and separates the damage type with vertical position.",
+  "width": 600,
+  "height": 400,
+  "data": { "url": "https://raw.githubusercontent.com/rishitaguduru/homework3-VA-UNCC/master/losses2015_transformed.csv"},
+  "title": "   Amount of Loss Vs Damage Type",
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "Damage_Descp", "type": "ordinal", "title": "Damage_Description", "sort": {"op": "mean", "field": "Amount", "order": "ascending"}
+    },
+    "x": {
+      "aggregate": "mean", "field": "Amount", "type": "quantitative", "title": "Total Loss($)" 
+    }
+  }
+}
